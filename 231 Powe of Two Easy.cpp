@@ -14,3 +14,8 @@ bool isPowerOfTwo(int n) {
 		}
 		return false;
 	}
+	
+bool isPowerOfTwo2(int n){
+	// one line method
+	return n > 0 && !(n & (n-1));
+}
