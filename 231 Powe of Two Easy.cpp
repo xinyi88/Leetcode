@@ -1,14 +1,16 @@
 // 231 Power of Two
 // Given an integer, write a function to determine if it is a power of two
-// binary search
+// 1, 2, 4, 8,
 bool isPowerOfTwo(int n) {
-	int start = 0, end = n;
-	while(start < end){
-		int middle = (end - start)/2 + start;
-		if(middle * middle == n) return true;
-		if(pow(middle, 2) > n) start = middle + 1;
-		else end = middle - 1;
-	}	
-	return false;
-	 
+		if(n <= 0) return false;
+		if(n == 1)return true;
+		
+		int tmp = n;
+		int n_bit = 1;
+		while(tmp){
+			n_bit = n_bit << 1;
+			if(n_bit == n) return true;
+			tmp /= 2;
+		}
+		return false;
 	}
