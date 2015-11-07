@@ -12,6 +12,7 @@ vector<vector<int>> threeSum(vector<int>& nums) {
 
 	vector<vector<int>> res;
 	int r, l, m = 0; // left, right, moving point
+	int count_z = 1;
 	while( m < nums.size() && nums[m] < 0 ){
 		l = m + 1;
 		r = nums.size() - 1;
@@ -34,8 +35,12 @@ vector<vector<int>> threeSum(vector<int>& nums) {
 			}
 		}
 		m++;
-		while( m + 1 < nums.size() && nums[m] == nums[m - 1]) m++;
+		while( m + 1 < nums.size() && nums[m] == nums[m + 1]){
+			if(nums[m] == 0) count_z++;
+			m++;
+		}
 	}
-	
+	if(count_z >= 3) res.push_back({0, 0, 0}); 
+	if(m == 0 && nums.size() >= 3 && nums[0] == nums[1] == nums[2] == 0) res.push_back({0,0,0});
 	return res;
 }
