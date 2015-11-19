@@ -8,4 +8,11 @@
 			res[k - 1] = min(res[k - 1], res[k]) + triangle[i][k - 1];
 
 	return	min(res[0], res[1]) + triangle[0][0];
+	// res[0] < res[1] ? res[0] : res[1];
     }
+	
+int mymin(int x, int y){
+	if(x < y) return x;
+	else return y;
+	
+}
