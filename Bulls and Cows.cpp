@@ -29,3 +29,18 @@ string getHint(string secret, string guess) {
 	res.push_back('B');
 	return res;
     }
+	
+	string getHint2(string secret, string guess){
+		string res;
+		unordered_map<char,int> myhash;
+		int n = secret.size();
+		int bull = 0, cow = 0;
+		for(int i = 0; i < n; i++){
+			if(secret[i] == guess[i])
+				bull++;
+			else{
+				myhash[secret[i]]++;
+				
+			}
+		}
+	}
